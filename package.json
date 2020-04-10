@@ -1,0 +1,66 @@
+{
+  "name": "@imbueplatform/domain-controller",
+  "version": "0.0.1",
+  "description": "Imbue Domain Controller",
+  "bin": {
+    "imbue-cell": "./bin/imbue-dc"
+  },
+  "scripts": {
+    "postinstall": "npx tsc",
+    "prepublishOnly": "npx tsc",
+    "imbue:dev": "tsc-watch --onSuccess \"node ./bin/imbue-dc\"",
+    "imbue:test": "npx tsc && NODE_ENV=test LOG_LEVEL=off jest test/*.test.js",
+    "print:project": "asciify ' @imbueplatform/domain-controller ' -f puffy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:imbueplatform/imbue-domain-controller.git"
+  },
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "dependencies": {
+    "@types/pump": "^1.1.0",
+    "@types/debug": "^4.1.5",
+    "@types/lodash": "^4.14.149",
+    "typescript": "^3.8.3",
+    "pump": "^3.0.0",
+    "debug": "^4.1.1",
+    "aws-sdk": "^2.656.0",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {},
+  "lint-staged": {
+    "*.js": [
+      "tslint --format codeframe --fix",
+      "git add"
+    ],
+    "*.{json,yaml,yml,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "keywords": [
+    "domain-controller",
+    "domain",
+    "controller",
+    "imbue",
+    "imbueplatform"
+  ],
+  "author": "Sasa Savic, <sasa@imbue.app>",
+  "license": "MIT"
+}

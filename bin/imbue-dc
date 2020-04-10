@@ -1,0 +1,18 @@
+#! /usr/bin/env node
+let { AwsDomainController } = require('../dist/index');
+
+let controller = new AwsDomainController({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_DEFAULT_PROFILE
+});
+
+(async function f() {
+    try {
+        let ret = await controller.domainAvailability("pappapcina.com");
+        console.log(ret);
+
+    } catch (e) {
+        console.log(e);
+    }
+})();
