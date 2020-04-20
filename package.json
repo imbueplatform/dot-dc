@@ -1,16 +1,15 @@
 {
-  "name": "@imbueplatform/domain-controller",
+  "name": "@imbueplatform/dot-dc",
   "version": "0.0.1",
-  "description": "Imbue Domain Controller",
+  "description": "DOT Domain Controller",
   "bin": {
-    "imbue-cell": "./bin/imbue-dc"
+    "dot-cell": "./bin/dot-dc"
   },
   "scripts": {
     "postinstall": "npx tsc",
     "prepublishOnly": "npx tsc",
-    "imbue:dev": "tsc-watch --onSuccess \"node ./bin/imbue-dc\"",
-    "imbue:test": "npx tsc && NODE_ENV=test LOG_LEVEL=off jest test/*.test.js",
-    "print:project": "asciify ' @imbueplatform/domain-controller ' -f puffy"
+    "imbue:dev": "tsc-watch --onSuccess \"node ./bin/dot-dc\"",
+    "imbue:test": "npx tsc && NODE_ENV=test LOG_LEVEL=off jest test/*.test.js"
   },
   "repository": {
     "type": "git",
